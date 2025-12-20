@@ -1,19 +1,16 @@
-import datetime
-from langchain_groq import ChatGroq
 from schemas import AnswerQuestion, ReviseAnswer
+from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage
 from langchain_core.output_parsers.openai_tools import (
     JsonOutputToolsParser,
     PydanticToolsParser,
 )
-
+import datetime
 
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# from langchain_openai import ChatOpenAI
 
 
 llm = ChatGroq(model="llama-3.1-8b-instant")
